@@ -27,7 +27,6 @@ const todo = (state, action) => {
 
 // todos reducer
 const todos = (state = [], action) => {
-    console.log(state, action)
     switch (action.type){
         case "ADD_TODO":
             return [...state, todo(undefined, action)];
@@ -49,7 +48,10 @@ const MyComponent = ({state, addTodo, onDecrement}) => (
 const store = createStore(todos);
 
 const render = () => {
-    console.log(store.getState())
+
+    // log
+    console.log(store.getState());
+
     ReactDOM.render(<MyComponent
 
         value={store.getState()}
